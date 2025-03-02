@@ -1,0 +1,55 @@
+/*menu*/
+header{
+    width: 10%;
+    position: fixed;
+    top: 0;;
+    padding: 3em;
+    /*border-right: 5px solid black;*/
+}
+.logo{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.logo img{
+    width: 50%;
+    margin-bottom: 1em;
+}
+ul li{
+    width: 100%;
+    padding: 0.3em;
+}
+ul li a{
+    width: 100%;
+    cursor: pointer;
+    font-family: "Noto Sans Mono";
+    transition: 0.3s;
+    font-size: 15pt;
+}
+li a:hover{
+    color: #3b57ff;
+}
+
+/*conteúdo da página*/
+main{
+    padding-left: 13em;
+    background-color: burlywood;
+    border-left: 3px solid black;
+}
+
+.galeria{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    margin: 2em;
+}
+.galeria a{
+    margin: 1em;
+}
+.galeria img{
+    width: 100%;
+    filter: grayscale(100%);
+    transition: 0.3s;
+}
+img:hover{
+    filter: grayscale(0%);
+}
