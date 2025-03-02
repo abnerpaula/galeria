@@ -1,55 +1,103 @@
 /*menu*/
 header{
-    width: 10%;
+    width: 20%;
     position: fixed;
-    top: 0;;
-    padding: 3em;
+    top: 0;
+    padding: 1em;
     /*border-right: 5px solid black;*/
 }
-.logo{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-}
 .logo img{
-    width: 50%;
-    margin-bottom: 1em;
+    padding: 1vh;
+    width: 20vh;
+}
+
+ul{
+    display: inline;
+    justify-content: space-around;
 }
 ul li{
     width: 100%;
-    padding: 0.3em;
 }
 ul li a{
     width: 100%;
+    padding: 0.3em;
     cursor: pointer;
     font-family: "Noto Sans Mono";
-    transition: 0.3s;
     font-size: 15pt;
 }
 li a:hover{
     color: #3b57ff;
+    transition: 0.3s;
+}
+/*botão invisível*/
+.checkbox{
+    width: 10%;
+    cursor: pointer;
+    display: none;
 }
 
 /*conteúdo da página*/
 main{
-    padding-left: 13em;
-    background-color: burlywood;
-    border-left: 3px solid black;
+    margin-left: 20%;
 }
 
 .galeria{
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    margin: 2em;
+    column-count: 3;
+    column-gap: 0em;
+    margin: 2.5em;
 }
 .galeria a{
-    margin: 1em;
+    margin: 0.5em;
+    background-color: #3b57ff;
+    transition: 0.3s;
 }
 .galeria img{
     width: 100%;
-    filter: grayscale(100%);
-    transition: 0.3s;
 }
-img:hover{
-    filter: grayscale(0%);
+.galeria a:hover{
+    transition: 0.3s;
+    box-shadow: -0.5em 0.5em #3b57ff,
+    0.5em -0.5em #3b57ff,
+    0.5em 0.5em #3b57ff,
+    -0.5em -0.5em #3b57ff
+    ;
+}
+@media (max-width: 600px){
+    .galeria{column-count: 2;}
+}
+@media (max-width: 425px){
+    .galeria{column-count: 1;}
+    header{
+        width: 100%;
+        padding: 3vh;
+        list-style: none;
+    }
+    .logo{
+        width: 100%;
+    }
+    .checkbox{
+        position: absolute;
+        right: 15vh;
+        padding-block: 10vh;
+        font-size: x-large;
+        display: block;
+    }
+    ul{
+        width: 100%;
+    }
+    ul li{
+        display: none;
+        z-index: 1;
+    }
+    li a{
+        padding-block: 5vh;
+    }
+    .checkbox:checked ~ ul li{
+        display: block;
+    }
+    main{
+        width: 100%;
+        padding-top: 30vh;
+        margin: 0;
+    }
 }
